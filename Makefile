@@ -9,13 +9,14 @@ compose-build:
 	docker-compose build
 
 code-lint:
-	# java -jar /opt/checkstyle.jar -c checkstyle.xml modules src
+	@ echo lint
 
-# compile:
-	# @(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
+clean:
+	@$$(find . -type d -wholename '*_build' -exec rm -r {} +)
+	@$$(find . -type f -name test.byte -delete)
 
-# clean:
-#   @$$(find . -type f -name *.class -delete)
+compose-clean:
+	docker-compose run exercises make clean
 
 compose-bash:
 	docker-compose run exercises bash
