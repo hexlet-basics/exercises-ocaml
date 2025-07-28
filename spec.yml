@@ -1,7 +1,7 @@
 ---
 
 language:
-  docker_image: "hexletbasics/exercises-ocaml"
+  docker_image: "ghcr.io/hexlet-basics/exercises-ocaml"
   extension: ml
   exercise_filename: index.ml
   exercise_test_filename: test.ml
